@@ -1,112 +1,39 @@
 # DS-4002-CS3
 
-## Section 1 - Software & Platform
-
-The main software used for this project includes VS Code with Python. We used Python's PyTorch and TensorFlow libraries, an image based system used to build and train models for image based recognition and model optimization. 
-
-The coding for this project was performed on a Windows machine.
-
-## Section 2 - Map of Documentation
-
-### Project Folder Strcutre:
-
-```
-DS-4002-Project-3/
-│
-├── DATA/
-│   ├── banana
-│   │   ├── fresh
-│   │   └── spoiled
-│   ├── lemon
-│   │   ├── fresh
-│   │   └── spoiled
-│   ├── lulo
-│   │   ├── fresh
-│   │   └── spoiled
-│   ├── mango
-│   │   ├── fresh
-│   │   └── spoiled
-│   ├── orange
-│   │   ├── fresh
-│   │   └── spoiled
-│   ├── strawberry
-│   │   ├── fresh
-│   │   └── spoiled
-│   ├── tamarillo
-│   │   ├── fresh
-│   │   └── spoiled
-│   ├── tomato
-│   │   ├── fresh
-│   │   └── spoiled
-│   └── Data Appendix p3.pdf
-│
-├── OUTPUT/
-│   ├── Analysis/
-|   |   ├── classified_images_grid_key.png
-|   |   ├── fresh_vs_spoiled_confusion_matrix.png
-|   |   ├── fruit_visualization.png
-│   │   ├── training_validation_accuracy.png
-│   │   └── training_validation_loss.png
-│   └── exploratory/
-│       ├── banana_average_color_histogram.png
-│       ├── lemon_average_color_histogram.png
-│       ├── lulo_average_color_histogram.png
-│       ├── mango_average_color_histogram.png
-│       ├── orange_average_color_histogram.png
-│       ├── strawberry_average_color_histogram.png
-│       ├── tamarillo_average_color_histogram.png
-│       └── tomato_average_color_histogram.png
-│
-├── SCRIPTS/
-│   ├── 1-ExploratoryPlot.py
-│   └── 2-FruitFreshnessClassifier.ipynb
-│
-├── LICENSE.md
-└── README.md
-```
-
-- **DATA/**: Contains the various image files used throughout the project, including the images sorted based on fruit type, and on a predetermined freshness level.
-- **OUTPUT/**:
-  - **exploratory/**: Contains exploratory plots for each of the fruits based on color intensity from the fresh and spoiled fruits for initial data trends.
-  - **Analysis/**: Contains analysis plots and visualizations from the results of the modeling.
-    
-- **SCRIPTS/**: Python scripts used in the project:
-  - **1-ExploratoryPlot.py**: Generates exploratory vizualzations for data insights.
-  - **2-FruitFreshnessClassifier.ipynb**: Contains the code to train and test the image model.
-
-## Section 3 - Instructions for reproducing results
-
-Follow the steps below to reproduce the results of this project: 
-### Step 1 : Dataset Collection 
-- Download the fruit image data from [mendeley.data](https://data.mendeley.com/datasets/bdd69gyhv8/1). This dataset contains 16,000 images, documentaing 16 different fruits with varying freshness levels.
-- Download the images from each of the fruit categories, and then depending on the fruit presented in the image, place the downloaded image files in the DATA/ folder of the project in their own respective file. The images given in the dataset are pre-sorted based on fruit type, and if they were classified as being fresh or spoiled.
-
-### Step 2 : Exploratory Data Analysis 
-- To observe initial trends in the data, run the **1-ExploratoryPlot.py** script. This will output various histograms for early data analysis, including information on the color intensity distribution for both fresh and spoiled fruit across the different fruit types.
-
-### Step 3 : Pre-Process Images
-- Pre-process images by resizing them to 224x224 pixels, normalizing the pixel values, and augmenting the data to increase robustness.
-
-### Step 4: Build and Train Model
-- Use the **2-FruitFreshnessClassifier.ipynb** notebook to:
-  - Load the dataset into training and validation sets.
-  - Fine-tune a pre-trained ResNet50 model for binary classification (fresh vs. spoiled).
-  - Save the trained model for evaluation.
-
-### Step 5: Evaluate Model
-- **Confusion Matrix**: Visualize classification performance with `fresh_vs_spoiled_confusion_matrix.png`.
-- **Training/Validation Metrics**: Review `training_validation_accuracy.png` and `training_validation_loss.png` for overfitting or convergence issues.
-- **Classified Images Grid**: Inspect `classified_images_grid_key.png` for correct/incorrect classifications and confidence scores.
-- **Per-Fruit Visualization**: Analyze `fruit_visualization.png` for performance on individual fruits.
-- **Key Metrics**: Summarize precision, recall, and F1-score from the classification report.
-
-### Step 6: Visualize Results
-- Run the visualization function in **2-FruitFreshnessClassifier.ipynb** to:
-  - Display and save grids of classified images (correct and incorrect classifications).
-  - Include confidence scores to assess prediction certainty.
-- Outputs will be saved in the `OUTPUT/Analysis/` directory.
+## Overview  
+This repository contains all necessary materials for completing the Fruit Freshness Classification Case Study. It includes the data, deliverables, and reference materials required to understand, analyze, and develop a machine learning solution for classifying fruit images as either "fresh" or "spoiled."  
 
 ---
+
+## Important Documents  
+- **Fruit Freshness Hook.pdf**  
+  Provides an engaging introduction to the case study and explains its significance in reducing food waste and preventing foodborne illnesses.  
+- **Fruit Freshness Rubric.pdf**  
+  Outlines the requirements, evaluation criteria, and tips for success. Use this document as a guide throughout the project to meet all deliverables effectively.  
+
+---
+
+## Data  
+The necessary data is located in the **DATA/** folder. It includes pre-categorized images of fruits in subfolders for "fresh" and "spoiled" across various fruit types. The dataset was obtained from [Mendeley Data](https://data.mendeley.com/datasets/bdd69gyhv8/1).  
+
+---
+
+## Reference Materials  
+- **Foodborne Pathogens Article.pdf**  
+  Background reading material highlighting the significance of identifying spoiled fruits in preventing foodborne illnesses.  
+
+---
+
+## Deliverables  
+- **OUTPUT/** folder contains analysis results and visualizations generated during the project, such as:  
+  - `classified_images_grid_key.png`  
+  - `fresh_vs_spoiled_confusion_matrix.png`  
+  - `training_validation_accuracy.png`  
+
+Ensure all deliverables align with the guidelines provided in the rubric.  
+
+---
+
 
 ## References 
 [1] P. S. Giovany Cesar, P. A. Orlando Javier, and J.-M. Robinson, “Spoiled and fresh fruit inspection dataset,” Mendeley Data, vol. 1, Nov. 2020, doi: https://doi.org/10.17632/6ps7gtp2wg.1.
